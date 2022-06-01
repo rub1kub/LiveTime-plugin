@@ -1,4 +1,5 @@
 timezone: "Europe/Moscow" #Check https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+globalTime: false #if true, the time will be static on the server. If false, then each player will have his own time according to his time zone.
 worlds:
   - world
   - world_nether

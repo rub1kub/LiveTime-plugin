@@ -30,7 +30,7 @@ public final class core extends JavaPlugin {
         getCommand("setTimeZone").setExecutor(new setTimezone(this));
         for(String w : core.getInstance().getConfig().getStringList("worlds")){
             if(Bukkit.getWorld(w) == null){
-                core.console.sendMessage(messages.format("&cUnknown timezone!&8/&cНеизвестный временной пояск!\n&7Check timezones.yml!&8/&7Посмотрите в timezones.yml"));
+                console.sendMessage(messages.format("&cUnknown world!&8/&cНеизвестный мир\n&7Проверьте название мира!"));
                 continue;
             }
             World world = Bukkit.getWorld(w);
