@@ -17,15 +17,20 @@ public class reload implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-        Player p = (Player) sender;
+        try {
+            Player p = (Player) sender;
 
-        if(!p.hasPermission("lt.admin")){
-            p.sendMessage(messages.format(plugin.getConfig().getString("messages.haventPerm")));
+            if(!p.hasPermission("lt.admin")){
+                p.sendMessage(messages.format(plugin.getConfig().getString("messages.haventPerm")));
+                return true;
+            }
+
+            plugin.reloadConfig();
+            p.sendMessage(messages.format(plugin.getConfig().getString("messages.reloaded")));
+            return true;
+        } catch (Exception exc){
+            sender.sendMessage(messages.format("&cЭта команда только для игроков!"));
             return true;
         }
-
-        plugin.reloadConfig();
-        p.sendMessage(messages.format(plugin.getConfig().getString("messages.reloaded")));
-        return true;
     }
 }
