@@ -1,0 +1,21 @@
+name: LiveTime
+version: '${project.version}'
+main: ru.rub1kib.core
+api-version: 1.18
+authors: [ rub1kub ]
+website: rubikub.ru
+commands:
+  liveTimeReload:
+    usage: /liveTimeReload
+    description: reload this plugin
+    aliases:
+      - lt.reload
+      - livetime.reload
+
+  setTimeZone:
+    usage: /setTimeZone
+    description: set time zone
+    aliases:
+      - timeZoneSet
+      - lt.setTimeZone
+      - livetime.setTimeZone
